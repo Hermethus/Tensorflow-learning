@@ -51,7 +51,7 @@ l1 = add_layer(xs,1,10,n_layer=1,activation_function=tf.nn.relu)
 #in_size是隐藏层的out_size，out_size是y_data的size
 prediction = add_layer(l1,10,1,n_layer=2,activation_function=None)
 
-#计算损失函数
+#计算损失函数,用均方差表示
 #reduce_xxxx函数是对输入进行降维，通过求和或者求平均等方式
 with tf.name_scope('loss'):
     loss = tf.reduce_mean(
@@ -69,7 +69,7 @@ with tf.name_scope('train'):
     train_step = tf.train.GradientDescentOptimizer(0.1).minimize(loss)
 
 #初始化，参数是Variable类型，需要初始化
-init = tf.initialize_all_variables()
+init = tf.global_variables_initializer()
 sess = tf.Session()
 
 #可视化文件
