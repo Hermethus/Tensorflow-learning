@@ -155,20 +155,3 @@ def main(argv=None):
 #Tensorflow定义的主程序入口，会调用上面的main函数
 if __name__ == '__main__':
     tf.app.run()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
